@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Student Profile</title>
+ <!-- Tailwind CSS CDN -->
+ <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-900">
+ <!-- Header -->
+ <header class="bg-red-900 text--700 shadow-lg"> 
+ <div class="container mx-auto px-6 py-5">
+ <h1 class="text-4xl font-bold text-center">
+ Spider-man : brand new day
+ </h1>
+ <p class="text-center mt-2">
+ Professional spider-man Portfolio
+ </p>
+ </div>
+ </header>
+ <!-- Navigation -->
+ <nav class="bg-white-700 text-white">
+ <div class="container mx-auto">
+ <ul class="flex justify-center space-x-8 py-4 font-medium">
+ <li><a href="#about" class="hover:text-yellow-300">About</a></li>
+ <li><a href="#education" class="hover:text-yellow-300">Education</a></li>
+ <li><a href="#skills" class="hover:text-yellow-300">Skills</a></li>
+ <li><a href="#hobbies" class="hover:text-yellow-300">Hobbies</a></li>
+ <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+ </ul>
+ </div>
+ </nav>
+ <!-- Main -->
+ <main class="container mx-auto p-6">
+ <!-- Profile Section -->
+ <section id="about"
+ class="bg-yellow-700 rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8 items-center">
+ <!-- Student Photo -->
+ <article>
+ <img 
+ src="https://i.pinimg.com/236x/c9/73/59/c97359a7cee8a4443a0b4bab081a9523.jpg"
+ alt="spider_man" width="150"
+ class="w-64 h-64 rounded-full border-8 border-red-600 object-cover">
+ </article>
+ <!-- Student Details -->
+ <article class="flex-1">
+ <h2 class="text-3xl font-bold text-red-700 mb-3">
+ [SPIDER-MAN]
+ </h2>
+ <p class="text-gray-700 leading-8">
+ <Your Profile info>
+<!--
+ [I am a passionate Computer Science student interested in
+ Data Structures, Web Development, Artificial Intelligence,
+ and Software Engineering. I enjoy learning new technologies
+ and developing responsive web applications.]
+-->
+ </p>
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+ <div>
+    <p><strong>Name :</strong> TOM HOLLAND</p>
+ <p><strong>Gender :</strong> MALE </p>
+ <p><strong>Date of Birth :</strong>01 JUNE 1996</p>
+ </div>
+ <div>
+ <p><strong>Industry:</strong> MARVELS</p>
+ <p><strong>Upcoming movie :</strong> BRAND NEW DAY</p>
+ </div>
+ </div>
+ </article>
+ </section>
+ <!-- Education -->
+ <section id="education"
+ class="bg-white rounded-xl shadow-lg p-8 mt-8">
+ <h2 class="text-3xl font-semibold text-cyan-700 mb-6">
+ Industry Details:
+ </h2>
+ <div class="overflow-x-auto">
+ <table class="w-full border border-gray-300">
+ <thead class="bg-cyan-700 text-white">
+ <tr>
+ <th class="p-3 border">Movies:</th>
+ <th class="p-3 border">SpiderMan: Homecomming</th>
+ <th class="p-3 border">SpiderMan:Far from home</th>
+ <th class="p-3 border">spiderMan: no way home</th>
+ <th class="p-3 border">SpiderMan: Brand new day</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr class="text-center hover:bg-gray-100">
+ <td class="border p-3">Role:</td>
+ <td class="border p-3">Bishop cotton high school</td>
+ <td class="border p-3">State Board</td>
+ <td class="border p-3"> [2023]</td>
+ <td class="border p-3">[78%]</td>
+ </tr>
+ <tr class="text-center hover:bg-gray-100">
+ <td class="border p-3">HSC</td>
+ <td class="border p-3">priya vidhya vihar jr. College</td>
+ <td class="border p-3">State Board</td>
+ <td class="border p-3">[2025]</td>
+ <td class="border p-3">[57%]</td>
+ </tr>
+ <tr class="text-center hover:bg-gray-100">
+ <td class="border p-3">B.Tech ()</td>
+ <td class="border p-3">SBJIT </td>
+ <td class="border p-3">Autonomus</td>
+ <td class="border p-3">[2025-2029]</td>
+ <td class="border p-3"> CGPA 6.88</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+ <!-- Skills -->
+ <section id="skills"
+ class="bg-white rounded-xl shadow-lg p-8 mt-8">
+ <h2 class="text-3xl font-bold text-red-900   mb-6">
+ ACCHIVEMENTS:
+ </h2>
+ <div class="flex flex-wrap gap-4">
+ <span class="bg-blue-600 text-white px-4 py-2 rounded-full">BAFTA Rising Star Award</span>
+ <span class="bg-green-600 text-white px-4 py-2 rounded-full">Marvel Cinematic Universe</span>
+ <span class="bg-red-600 text-white px-4 py-2 rounded-full">The impossible (2012)</span>
+ <span class="bg-yellow-500 text-white px-4 py-2 rounded-full">Forbes 30 Under 30 Europes (2019)</span>
+ <span class="bg-purple-600 text-white px-4 py-2 rounded-full">$9.9 billion worldwide</span>
+ <span class="bg-indigo-600 text-white px-4 py-2 rounded-full">Three Saturn Awards</span>
+ <span class="bg-cyan-600 text-white px-4 py-2 rounded-full">MTV Movies Award (2022)</span>
+ </div>
+ </section>
+ <!-- Hobbies -->
+ <section id="hobbies"
+ class="bg-white rounded-xl shadow-lg p-8 mt-8">
+ <h2 class="text-3xl font-bold text-blue-700 mb-6">
+ Hobbies
+ </h2>
+ <ul class="list-disc ml-8 space-y-3 text-gray-700">
+ <li>Playing video games</li>
+ <li>Programming</li>
+ <li>Listening to Music</li>
+ <li>Playing Football</li>
+ <li>Learning New Games</li>
+ </ul>
+ </section>
+ <!-- Aside -->
+ <aside
+ class="bg-yellow-100 border-l-8 border-yellow-500 p-6 rounded-lg mt-8">
+ <h3 class="text-2xl font-bold text-yellow-700">
+ Career Objective
+ </h3>
+ <p class="mt-3 text-gray-700">
+ to Become a Gamer and create my own gaming channel. I wish to join
+ game developer industry , and create multiple types of game.
+ </p>
+ </aside>
+ <!-- Contact -->
+ <section id="contact"
+ class="bg-white rounded-xl shadow-lg p-8 mt-8">
+ <h2 class="text-3xl font-bold text-blue-700 mb-6">
+ Contact Information
+ </h2>
+ <div class="grid md:grid-cols-2 gap-6">
+ <div>
+ <p><strong>Email :</strong> aarshh.ds25@sbjit.edu.in </p>
+ <p><strong>Mobile :</strong> 7843030166 </p>
+ </div>
+ <div>
+ <p><strong>Address :</strong></p>
+ <p>Vaishali Nagar Nagpur, Maharashtra, India</p>
+ </div>
+ </div>
+ </section>
+ </main>
+ <!-- Footer -->
+ <footer class="bg-blue-900 text-white text-center py-5 mt-10">
+ <p>
+ <!-- copyright code &#xA9; --> &#xA9; 2026 Student Profile | Designed using HTML5 & Tailwind
+CSS
+ </p>
+ </footer>
+</body>
+</html>
