@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .btn {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Student Registration Form</h2>
+    <form id="regForm" onsubmit="return validateForm()">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name">
+      <span id="nameError" class="error"></span>
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      <span id="emailError" class="error"></span>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <span id="passError" class="error"></span>
+
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" id="mobile" name="mobile">
+      <span id="mobileError" class="error"></span>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      let valid = true;
+
+      // Name validation
+      let name = document.getElementById("name").value.trim();
+      if (name === "") {
+        document.getElementById("nameError").innerText = "Name is required";
+        valid = false;
+      } else {
+        document.getElementById("nameError").innerText = "";
+      }
+
+      // Email validation
+      let email = document.getElementById("email").value.trim();
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        document.getElementById("emailError").innerText = "Enter a valid email";
+        valid = false;
+      } else {
+        document.getElementById("emailError").innerText = "";
+      }
+
+      // Password validation
+      let password = document.getElementById("password").value;
+      if (password.length < 6) {
+        document.getElementById("passError").innerText = "Password must be at least 6 characters";
+        valid = false;
+      } else {
+        document.getElementById("passError").innerText = "";
+      }
+
+      // Mobile validation
+      let mobile = document.getElementById("mobile").value.trim();
+      let mobilePattern = /^[0-9]{10}$/;
+      if (!mobile.match(mobilePattern)) {
+        document.getElementById("mobileError").innerText = "Enter a valid 10-digit mobile number";
+        valid = false;
+      } else {
+        document.getElementById("mobileError").innerText = "";
+      }
+
+      return valid;
+    }
+  </script>
+</body>
+</html>
