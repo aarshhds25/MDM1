@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tracker App</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-indigo-600 mb-4">📚 My Book Tracker</h2>
+
+    <!-- Input Section -->
+    <div class="flex mb-4">
+      <input id="bookInput" type="text" placeholder="Enter book title..."
+        class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      <button onclick="addBook()"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg hover:bg-indigo-700 transition">Add</button>
+    </div>
+
+    <!-- Book List -->
+    <ul id="bookList" class="space-y-2"></ul>
+  </div>
+
+  <script>
+    function addBook() {
+      const bookInput = document.getElementById("bookInput");
+      const bookTitle = bookInput.value.trim();
+
+      if (bookTitle === "") {
+        alert("Please enter a book title!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.className = "flex justify-between items-center bg-gray-50 border rounded-lg px-3 py-2";
+
+      // Book text
+      const span = document.createElement("span");
+      span.textContent = bookTitle;
+      span.className = "flex-1 cursor-pointer";
+      span.onclick = () => {
+        span.classList.toggle("line-through");
+        span.classList.toggle("text-gray-400");
+      };
+
+      // Delete button
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "❌";
+      delBtn.className = "ml-3 text-red-500 hover:text-red-700";
+      delBtn.onclick = () => li.remove();
+
+      li.appendChild(span);
+      li.appendChild(delBtn);
+
+      document.getElementById("bookList").appendChild(li);
+      bookInput.value = "";
+    }
+  </script>
+</body>
+</html>
