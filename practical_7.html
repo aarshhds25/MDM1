@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive FAQ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .faq-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-question {
+      background: #007bff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      margin-top: 5px;
+      background: #e9ecef;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">What is the eligibility for the course?</div>
+      <div class="faq-answer">Students must have completed their 12th grade with science stream.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How can I register for the festival?</div>
+      <div class="faq-answer">You can register online through the college portal or at the help desk.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Is there any participation fee?</div>
+      <div class="faq-answer">No, participation is completely free for all students.</div>
+    </div>
+  </div>
+
+  <script>
+    // Select all questions
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach(question => {
+      question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+
+        // Toggle answer visibility
+        if (answer.style.display === "block") {
+          answer.style.display = "none";
+        } else {
+          answer.style.display = "block";
