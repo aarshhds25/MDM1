@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal To-Do List</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center text-indigo-600 mb-4">📌 My To-Do List</h2>
+
+    <!-- Input Section -->
+    <div class="flex mb-4">
+      <input id="taskInput" type="text" placeholder="Enter a new task..."
+        class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+      <button onclick="addTask()"
+        class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg hover:bg-indigo-700 transition">Add</button>
+    </div>
+
+    <!-- Task List -->
+    <ul id="taskList" class="space-y-2"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      const taskText = taskInput.value.trim();
+
+      if (taskText === "") {
+        alert("Please enter a task!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.className = "flex justify-between items-center bg-gray-50 border rounded-lg px-3 py-2";
+
+      // Task text
+      const span = document.createElement("span");
+      span.textContent = taskText;
+      span.className = "flex-1 cursor-pointer";
+      span.onclick = () => {
+        span.classList.toggle("line-through");
+        span.classList.toggle("text-gray-400");
+      };
+
+      // Delete button
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "❌";
+      delBtn.className = "ml-3 text-red-500 hover:text-red-700";
+      delBtn.onclick = () => li.remove();
+
+      li.appendChild(span);
+      li.appendChild(delBtn);
+
+      document.getElementById("taskList").appendChild(li);
+      taskInput.value = "";
+    }
+  </script>
+</body>
+</html>
